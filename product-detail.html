@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chi tiết sản phẩm | TechX Store</title>
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="product-detail.css">
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="index.html">TECHX<span>STORE</span></a>
+  <nav>
+    <a href="index.html">Trang chủ</a>
+    <a class="active" href="products.html">Sản phẩm</a>
+  </nav>
+  <div class="header-actions">
+    <a href="products.html" class="btn secondary">← Cửa hàng</a>
+    <div id="userArea">
+      <a href="auth.html" class="btn primary">Đăng nhập</a>
+    </div>
+  </div>
+</header>
+
+<main class="detail-container">
+
+  <div class="detail-breadcrumb">
+    <a href="index.html">Trang chủ</a> /
+    <a href="products.html">Sản phẩm</a> /
+    <span>Chi tiết sản phẩm</span>
+  </div>
+
+  <div id="detailLoading" class="detail-loading">
+    Đang tải thông tin sản phẩm...
+  </div>
+
+  <div id="detailError" class="detail-error hidden">
+    <h2>Không tìm thấy sản phẩm!</h2>
+    <p>Sản phẩm có thể đã bị xóa khỏi cửa hàng.</p>
+    <a href="products.html" class="btn primary">Quay lại cửa hàng</a>
+  </div>
+
+  <section id="detailContent" class="detail-content hidden">
+
+    <div class="detail-image-box">
+      <span id="detailBadge" class="detail-badge hidden"></span>
+      <img id="detailImage" src="" alt="Sản phẩm">
+    </div>
+
+    <div class="detail-info">
+
+      <span id="detailCategory" class="detail-category"></span>
+
+      <h1 id="detailName"></h1>
+
+      <p id="detailBrand" class="detail-brand"></p>
+
+      <div class="detail-rating">
+        ⭐ Sản phẩm tại TechX Store
+      </div>
+
+      <div class="detail-price-box">
+        <strong id="detailPrice"></strong>
+        <del id="detailOldPrice"></del>
+      </div>
+
+      <p id="detailStock" class="detail-stock"></p>
+
+      <div class="detail-description">
+        <h3>Mô tả sản phẩm</h3>
+        <p id="detailDescription"></p>
+      </div>
+
+      <div class="detail-quantity">
+        <span>Số lượng:</span>
+        <button id="minusQty" type="button">−</button>
+        <input id="detailQty" type="number" value="1" min="1">
+        <button id="plusQty" type="button">+</button>
+      </div>
+
+      <div class="detail-actions">
+        <button id="addDetailCart" class="btn primary" type="button">
+          🛒 Thêm vào giỏ hàng
+        </button>
+        <button id="buyNow" class="btn secondary" type="button">
+          Mua ngay
+        </button>
+      </div>
+
+      <p id="detailMessage" class="detail-message"></p>
+
+      <div class="detail-benefits">
+        <div>✓ Thông tin sản phẩm rõ ràng</div>
+        <div>✓ Kiểm tra tồn kho trực tuyến</div>
+        <div>✓ Đặt hàng trực tiếp trên website</div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="specificationSection" class="specification-section hidden">
+    <h2>Thông số kỹ thuật</h2>
+    <div id="specificationList"></div>
+  </section>
+
+  <section class="related-section">
+    <div class="related-heading">
+      <h2>Sản phẩm liên quan</h2>
+      <a href="products.html">Xem tất cả →</a>
+    </div>
+    <div id="relatedProducts" class="related-grid"></div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <a class="logo" href="index.html">TECHX<span>STORE</span></a>
+  <p>© 2026 TechX Store. Công nghệ cho mọi hành trình.</p>
+</footer>
+
+<script type="module" src="product-detail.js"></script>
+</body>
+</html>

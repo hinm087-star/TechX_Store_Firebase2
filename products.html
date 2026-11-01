@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sản phẩm | TechX Store</title>
+<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="products.css">
+</head>
+<body>
+<header class="header">
+  <a class="logo" href="index.html">TECHX<span>STORE</span></a>
+  <nav>
+    <a href="index.html">Trang chủ</a>
+    <a class="active" href="products.html">Sản phẩm</a>
+    <a href="admin.html">Quản trị</a>
+  </nav>
+  <div class="header-actions">
+    <button id="cartButton" class="btn secondary" type="button">
+      🛒 Giỏ hàng (<span id="cartCount">0</span>)
+    </button>
+    <div id="userArea"><a class="btn primary" href="auth.html">Đăng nhập</a></div>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="container">
+    <span class="eyebrow">TECHX COLLECTION</span>
+    <h1>Khám phá sản phẩm</h1>
+    <p>Tìm kiếm thiết bị công nghệ dành riêng cho bạn.</p>
+  </div>
+</section>
+
+<main class="container catalog">
+  <div class="catalog-toolbar">
+    <input id="searchInput" type="search" placeholder="🔎 Tìm tên sản phẩm, thương hiệu...">
+    <select id="categoryFilter">
+      <option value="all">Tất cả danh mục</option>
+      <option value="Laptop">Laptop</option>
+      <option value="PC">PC</option>
+      <option value="Linh kiện">Linh kiện</option>
+      <option value="Phụ kiện">Phụ kiện</option>
+    </select>
+    <select id="sortSelect">
+      <option value="newest">Mới nhất</option>
+      <option value="priceAsc">Giá tăng dần</option>
+      <option value="priceDesc">Giá giảm dần</option>
+      <option value="nameAsc">Tên A–Z</option>
+    </select>
+  </div>
+
+  <div class="catalog-layout">
+    <aside class="filter-sidebar">
+      <h3>Bộ lọc giá</h3>
+      <label for="minPrice">Giá thấp nhất (VNĐ)</label>
+      <input id="minPrice" type="number" min="0" placeholder="0">
+      <label for="maxPrice">Giá cao nhất (VNĐ)</label>
+      <input id="maxPrice" type="number" min="0" placeholder="Không giới hạn">
+      <button id="resetFilters" class="btn secondary full" type="button">Xóa bộ lọc</button>
+      <div class="sidebar-cart">
+        <h3>Giỏ hàng của bạn</h3>
+        <div id="miniCart"><p class="muted">Giỏ hàng trống.</p></div>
+        <div class="mini-total"><span>Tổng cộng</span><strong id="miniCartTotal">0 ₫</strong></div>
+      </div>
+    </aside>
+
+    <section>
+      <div class="catalog-result">
+        <h2>Tất cả sản phẩm</h2>
+        <span id="productResultCount">Đang tải...</span>
+      </div>
+      <p id="productLoading" class="muted">Đang tải sản phẩm từ Firebase...</p>
+      <div id="productGrid" class="product-grid product-grid-large"></div>
+      <div id="emptyState" class="empty-state hidden">
+        <h3>Không tìm thấy sản phẩm</h3>
+        <p>Hãy thử thay đổi từ khóa hoặc bộ lọc.</p>
+      </div>
+    </section>
+  </div>
+</main>
+
+<div id="cartDrawer" class="cart-drawer hidden">
+  <div class="drawer-backdrop" data-close-cart></div>
+  <section class="drawer-panel">
+    <div class="drawer-heading">
+      <h2>Giỏ hàng của bạn</h2>
+      <button class="close-drawer" data-close-cart type="button">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="drawer-footer">
+      <div class="mini-total"><span>Tổng thanh toán</span><strong id="cartTotal">0 ₫</strong></div>
+      <button id="checkoutButton" class="btn primary full" type="button">Đặt hàng</button>
+      <p class="muted small">Bạn cần đăng nhập để tạo đơn hàng.</p>
+    </div>
+  </section>
+</div>
+
+<footer class="footer"><a class="logo" href="index.html">TECHX<span>STORE</span></a><p>© 2026 TechX Store</p></footer>
+<script type="module" src="store.js"></script>
+</body>
+</html>

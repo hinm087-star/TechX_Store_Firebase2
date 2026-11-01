@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Quản trị | TechX Store</title><link rel="stylesheet" href="main.css"><link rel="stylesheet" href="admin.css"></head><body>
+<a class="skip-link" href="#main-content">Đến nội dung chính</a>
+  <section id="adminLoginBox" class="admin-login-card">
+    <div class="lock-icon">🔐</div>
+    <span class="eyebrow">RESTRICTED AREA</span>
+    <h1>Đăng nhập quản trị</h1>
+    <p class="muted">Chỉ tài khoản được cấp quyền Admin mới được truy cập.</p>
+    <form id="adminLoginForm">
+      <label for="adminEmail">Email quản trị</label>
+      <input id="adminEmail" type="email" required autocomplete="username">
+      <label for="adminPassword">Mật khẩu</label>
+      <input id="adminPassword" type="password" required autocomplete="current-password">
+      <button class="btn primary full" type="submit">Đăng nhập Admin</button>
+      <p id="adminLoginMessage" class="message"></p>
+    </form>
+    <a class="back-link" href="index.html">← Về trang chủ</a>
+  </section>
+
+
+<div id="adminDashboard" class="hidden">
+<header class="admin-header"><a class="admin-brand" href="admin.html"><span class="brand-mark">T</span>TechX <span class="brand-caption">Admin</span></a>
+<button id="sidebarToggle" class="icon-button" aria-label="Ẩn hoặc hiện menu" aria-expanded="false" aria-controls="adminSidebar"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+<label class="header-search"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/></svg><input id="adminSearch" type="search" placeholder="Tìm sản phẩm…" aria-label="Tìm sản phẩm"><kbd>⌘ K</kbd></label>
+<div class="header-actions"><button id="themeToggle" class="icon-button" aria-label="Đổi giao diện sáng tối" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v2m0 18v2M1 12h2m18 0h2M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></svg></button><a class="store-link" href="index.html"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5h6v6m0-6L10 16M21 14v6H4V3h10"/></svg><span>Về cửa hàng</span></a><span class="avatar">A</span><span class="account-label">Quản trị viên</span></div></header>
+<button id="sidebarBackdrop" class="sidebar-backdrop" aria-label="Đóng menu" hidden></button>
+<aside id="adminSidebar" class="admin-sidebar"><p class="nav-caption">KHÔNG GIAN LÀM VIỆC</p><nav aria-label="Menu quản trị">
+<a class="nav-link active" href="#overview"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Tổng quan</a><a class="nav-link" href="#product-list"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z M3 8v10l9 5 9-5V8 M12 13v10 M7 5.8l9 5"/></svg>Sản phẩm <span id="navProductCount" class="nav-count">0</span></a><a class="nav-link" href="#product-editor"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Thêm sản phẩm</a><a class="nav-link" href="#order-summary"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="14" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2m-8 5 3 3 5-5"/></svg>Đơn hàng</a></nav>
+<div class="sidebar-bottom"><div class="connection"><span></span> Đã xác thực quản trị</div><p id="adminWelcome"></p><button id="adminLogout" class="btn secondary full" type="button">Đăng xuất</button></div></aside>
+<main id="main-content" class="admin-main"><section id="overview"><div class="breadcrumb">Quản trị <span>/</span> Tổng quan</div><div class="admin-title-row"><div><h1>Tổng quan cửa hàng</h1><p class="muted" id="lastUpdated">Quản lý sản phẩm và theo dõi hoạt động của TechX Store.</p></div><a class="btn primary" href="#product-editor"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>Thêm sản phẩm</a></div>
+<div class="admin-stats"><article class="admin-stat"><span class="stat-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5 9-5Z M3 8v10l9 5 9-5V8 M12 13v10 M7 5.8l9 5"/></svg></span><div><span class="stat-label">TỔNG SẢN PHẨM</span><strong id="adminProductCount">—</strong><small>Sản phẩm trong cửa hàng</small></div></article><article class="admin-stat"><span class="stat-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="14" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2m-8 5 3 3 5-5"/></svg></span><div><span class="stat-label">TỔNG ĐƠN HÀNG</span><strong id="adminOrderCount">—</strong><small>Đơn hàng đã ghi nhận</small></div></article><article class="admin-stat"><span class="stat-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></span><div><span class="stat-label">TỔNG TỒN KHO</span><strong id="adminStockCount">—</strong><small>Số lượng sản phẩm còn lại</small></div></article><article class="admin-stat"><span class="stat-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg></span><div><span class="stat-label">SẢN PHẨM NỔI BẬT</span><strong id="adminFeaturedCount">—</strong><small>Được hiển thị ở trang chủ</small></div></article></div></section><div class="overview-grid"><section class="admin-panel"><div class="panel-heading"><h2>Phân bố sản phẩm</h2><span class="muted">Theo danh mục</span></div><div id="categoryOverview" class="category-overview"><p class="muted">Đang tải dữ liệu…</p></div></section><section id="order-summary" class="admin-panel"><div class="panel-heading"><h2>Trạng thái cửa hàng</h2><span class="status-badge">Trực tuyến</span></div><div class="store-summary"><span class="summary-symbol"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="16" height="14" rx="2"/><path d="M8 7V5a4 4 0 0 1 8 0v2m-8 5 3 3 5-5"/></svg></span><div><h3>Dữ liệu được kết nối</h3><p class="muted">Sản phẩm và số lượng đơn hàng được cập nhật từ cửa hàng.</p><p id="dashboardMessage" class="message" role="status"></p></div></div></section></div>
+<section id="product-list" class="admin-panel"><div class="panel-heading"><div><h2>Danh sách sản phẩm</h2><p class="muted">Quản lý giá bán, tồn kho và thông tin sản phẩm.</p></div><button id="refreshAdminProducts" class="btn secondary" type="button"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"/><path d="M6 6a8 8 0 0 1 14 6M4 12a8 8 0 0 0 14 6"/></svg>Làm mới</button></div><div class="table-toolbar"><label>Danh mục <select id="categoryFilter"><option value="">Tất cả danh mục</option><option>Laptop</option><option>PC</option><option>Linh kiện</option><option>Phụ kiện</option></select></label><span id="productResultCount" class="muted" aria-live="polite"></span></div><div id="adminProductsList" class="table-scroll"><p class="empty-state">Đang tải sản phẩm…</p></div></section>
+<section id="product-editor" class="admin-panel"><div class="panel-heading"><div><h2 id="productFormTitle">Thêm sản phẩm</h2><p class="muted">Điền thông tin để cập nhật danh mục cửa hàng.</p></div><span class="form-tag">THÔNG TIN SẢN PHẨM</span></div><div class="form-body">      <form id="productForm" class="product-form">
+        <input id="productId" type="hidden">
+        <label>Tên sản phẩm<input id="productName" required maxlength="150"></label>
+        <label>Thương hiệu<input id="productBrand" required></label>
+        <label>Danh mục
+          <select id="productCategory">
+            <option>Laptop</option><option>PC</option>
+            <option>Linh kiện</option><option>Phụ kiện</option>
+          </select>
+        </label>
+        <label>Giá bán (VNĐ)<input id="productPrice" type="number" min="0" required></label>
+        <label>Giá cũ (VNĐ)<input id="productOldPrice" type="number" min="0" value="0"></label>
+        <label>Tồn kho<input id="productStock" type="number" min="0" value="10" required></label>
+        <label>Nhãn sản phẩm<input id="productBadge" placeholder="HOT / NEW / SALE"></label>
+        <label class="wide">URL ảnh<input id="productImage" type="url" placeholder="https://..." required></label>
+        <label class="wide">Mô tả<textarea id="productDescription" rows="3" required></textarea></label>
+        <label class="wide check"><input id="productFeatured" type="checkbox"> Hiển thị ở trang chủ</label>
+        <div class="wide actions">
+          <button class="btn primary" type="submit">Lưu sản phẩm</button>
+          <button id="cancelEdit" class="btn secondary" type="button">Hủy chỉnh sửa</button>
+        </div>
+        <p id="adminProductMessage" class="message wide"></p>
+      </form></div></section><footer class="admin-footer"><span>© TechX Store</span><span>Giao diện theo Metis · Quản trị cửa hàng</span></footer></main></div><script src="admin-ui.js" defer></script><script type="module" src="admin.js"></script></body></html>
